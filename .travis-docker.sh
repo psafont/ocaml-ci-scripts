@@ -75,14 +75,6 @@ else
           echo RUN git pull -q origin 1.2 >> Dockerfile ;;
     esac
 fi
-echo RUN opam update >> Dockerfile
-
-echo RUN opam remove travis-opam >> Dockerfile
-if [ $fork_user != $default_user -o $fork_branch != $default_branch ]; then
-    echo RUN opam pin add -n travis-opam \
-         https://github.com/$fork_user/ocaml-ci-scripts.git#$fork_branch \
-         >> Dockerfile
-fi
 
 case $opam_version in
     2)

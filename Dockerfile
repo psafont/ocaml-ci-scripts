@@ -1,4 +1,4 @@
-FROM ocaml/opam2:alpine as base
+FROM ocaml/ocurrent:alpine as base
 
 RUN opam depext -iy dune
 
